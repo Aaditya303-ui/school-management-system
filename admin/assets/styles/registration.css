@@ -1,0 +1,97 @@
+/* ===== Page Background ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6fa; /* soft light gray instead of pure white */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Main Card ===== */
+.container {
+    background: #ffffff;
+    width: 400px;
+    padding: 45px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+/* ===== Title ===== */
+.container h4 {
+    color: #222;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* ===== Inputs ===== */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    color: #333;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+/* Input focus effect */
+.form-group input:focus {
+    outline: none;
+    border-color: #f84464;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(248, 68, 100, 0.15);
+}
+
+/* ===== Register Button ===== */
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #f84464;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Button Hover */
+.form-group input[type="submit"]:hover {
+    background: #d73754;
+}
+
+/* ===== Error Messages ===== */
+.error,
+.error1 {
+    color: #e63946;
+    font-size: 12px;
+    display: block;
+    margin-top: -12px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+/* ===== Login Link ===== */
+#login {
+    display: block;
+    margin-top: 18px;
+    color: #f84464;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+#login:hover {
+    text-decoration: underline;
+}
