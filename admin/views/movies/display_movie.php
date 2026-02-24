@@ -1,3 +1,19 @@
+<?php 
+
+session_start();
+
+if(!isset($_SESSION['email'])){
+    header("Location: /movie-management-system/admin/login.php");
+    exit();
+}
+
+// importing scripts
+require_once __DIR__. '/../../controller/movieController.php';
+
+// controller
+$movieController = new movieController\movieController();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,31 +29,50 @@
     <?php include_once '../../includes/sidebar.php'; ?>
     <div class="content">
         <table class="table table-striped table-hover w-100">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Duration</th>
+                    <th>Rating</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    <th><a class="btn btn-danger" href="add_movie.php">+</a></th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+              $movieController = new movieController\movieController();
+              $movies = $movieController -> display();
+            ?>
+
+            <?php if(isset($movies)): ?>
+                <?php foreach($movies as $m): ?>
         <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Duration</th>
-            <th>Rating</th>
-            <th>Update</th>
-            <th>Delete</th>
-            <th><a class="btn btn-danger" href="add_movie.php">+</a></th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Dhurandhar</td>
+            <td><?php echo $m['movie_id']; ?></td>
+            <td><?php echo $m['movie_title']; ?></td>
             <td>
-                <img class='display-img' src="../../assets/image/dhurandhar.png" alt="">
+                <div class="display-img">
+                    <img class='display-img' src="../../assets/image/<?php echo $m['movie_img']; ?>" alt="">
+                </div>
             </td>
-            <td>214</td>
-            <td>4</td>
+            <td><?php echo $m['duration']; ?></td>
+            <td><?php echo $m['rating']; ?></td>
             <td>
-                <button class="btn btn-warning">Update</button>
+                <a href="update_movie.php?q=<?php echo $m['movie_id']; ?>" class="btn btn-warning">
+                    Update
+                </a>
             </td>
             <td>
-                <button class="btn btn-danger">Delete</button>
+                <a href="delete_movie.php?q=<?php echo $m['movie_id']; ?>" class="btn btn-danger">
+                    Delete
+                </a>
             </td>
         </tr>
+        <?php endforeach;?>
+        <?php endif;?>
+            </tbody>
     </table>
     </div>
 </body>

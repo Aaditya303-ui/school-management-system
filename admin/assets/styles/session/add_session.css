@@ -1,0 +1,138 @@
+/* ===== Global Reset ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 950px;
+    margin: 60px auto;
+}
+
+/* ===== Card ===== */
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 40px 45px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    border: none;
+    position: relative;
+}
+
+/* ===== Back Link ===== */
+.card a {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    text-decoration: none;
+    color: #f84464;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Heading ===== */
+.heading {
+    font-size: 26px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 35px;
+}
+
+/* ===== Form Layout ===== */
+.session-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+}
+
+/* Make End Time full width */
+.session-form .form-group:nth-child(5) {
+    grid-column: span 2;
+}
+
+/* Submit button full width */
+.session-form button {
+    grid-column: span 2;
+}
+
+/* ===== Form Group ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Labels ===== */
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* ===== Inputs & Select ===== */
+.form-control {
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 0 14px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    background: #fafafa;
+}
+
+.form-control:focus {
+    border-color: #f84464;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(248,68,100,0.15);
+    outline: none;
+}
+
+/* Readonly End Time Styling */
+#end_time_preview {
+    background: #f1f1f1;
+    font-weight: 600;
+    color: #555;
+}
+
+/* ===== Button ===== */
+.btn-danger {
+    height: 48px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    background: #f84464;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: #d73754;
+    transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .container {
+        margin: 30px 15px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .session-form {
+        grid-template-columns: 1fr;
+    }
+
+    .session-form .form-group:nth-child(5),
+    .session-form button {
+        grid-column: span 1;
+    }
+}

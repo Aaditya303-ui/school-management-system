@@ -1,3 +1,17 @@
+<?php 
+
+// importing scripts
+require_once __DIR__. '/../../controller/movieController.php';
+
+// controller
+$movieController = new movieController\movieController();
+
+
+if(isset($_POST['submit'])){
+    $movieController -> add();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +34,10 @@
                      <h3 class="heading">Movie Form</h3>
                  </div>
 
-                 <form action="add_movie.php" method="post">
+                 <form action="add_movie.php" method="post" enctype="multipart/form-data">
                      <div class="col-5 ml-5 mt-3 pl-3">
                          <label>Enter the Movie Name</label>
-                         <input type="text" name="fullName" placeholder="Enter your full Name" class="form-control">
+                         <input type="text" name="movie_title" placeholder="Enter your full Name" class="form-control">
                      </div>
     
                      <div class="col-5 ml-5 mt-3 pl-3">
@@ -42,7 +56,7 @@
                          <input type="text" name="rating" placeholder="Enter your Rating" class="form-control">
                      </div>
     
-                     <button type="submit" class="btn btn-danger">Submit</button>
+                     <button name="submit" type="submit" class="btn btn-danger">Submit</button>
                  </form>
                  
              </div>

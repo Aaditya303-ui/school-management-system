@@ -18,6 +18,7 @@ td{
 }
 
 .display-img{
-    height: 100px;
+    height: 140px;
     width: 180px;
+    object-fit: cover;
 }

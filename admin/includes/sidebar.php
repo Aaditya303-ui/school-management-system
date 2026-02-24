@@ -1,6 +1,6 @@
 <body>
     <header class="header">
-        <a href="">Admin Dashboard</a>
+        <a href="/movie-management-system/admin/views/dashboard.php">Admin Dashboard</a>
         <div class="logout">
             <a href="../../logout.php" class="btn btn-primary">Logout</a>
         </div>
@@ -9,16 +9,13 @@
     <aside>
         <ul>
             <li>
-                <a href="../views/movies/display_movie.php">Movies</a>
+                <a href="/movie-management-system/admin/views/movies/display_movie.php">Movies</a>
             </li>
             <li>
-                <a href="">Halls</a>
-            </li>
-            <li>
-                <a href="">Sessions</a>
+                <a href="/movie-management-system/admin/views/sessions/display_session.php">Sessions</a>
             </li>
              <li>
-                <a href="">Book Seats</a>
+                <a href="/movie-management-system/admin/views/booking/display_booking.php">Book Seats</a>
             </li>
             <li>
                 <a href="">Report Booking</a>
