@@ -1,4 +1,11 @@
 <?php 
+session_start();
+
+if(!isset($_SESSION['email'])){
+    header("Location: /movie-management-system/admin/login.php");
+    exit();
+}
+
 // importing scripts
 require_once __DIR__. '/../../controller/movieController.php';
 require_once __DIR__. '/../../controller/sessionController.php';

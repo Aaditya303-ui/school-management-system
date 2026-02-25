@@ -22,6 +22,14 @@ class Session{
         return $stmt -> fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function displaySessionByMId($movie_id){
+        $sql = "SELECT * FROM session WHERE movie_id = :movie_id";
+        $stmt = $this -> conn -> prepare($sql);
+        $data = [":movie_id" => $movie_id];
+        $stmt -> execute($data);
+        return $stmt -> fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function displaySessionById($movie_id)
     {
         $sql = "SELECT * FROM session WHERE id = :id";

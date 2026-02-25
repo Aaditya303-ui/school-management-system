@@ -1,0 +1,15 @@
+.content{
+    width: 100%;
+}
+
+.form-control{
+    width: 450px;
+}
+
+select{
+    margin-top: 10px;
+}
+
+.select-session{
+    margin-top: 10px;
+}
