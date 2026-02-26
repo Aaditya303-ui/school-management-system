@@ -13,3 +13,8 @@ select{
 .select-session{
     margin-top: 10px;
 }
+
+.session-table{
+    margin-top: 50px;
+    width: 1100px;
+}

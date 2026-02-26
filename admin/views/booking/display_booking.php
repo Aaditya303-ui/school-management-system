@@ -39,12 +39,11 @@ $movie = $movieController -> display();
         </select>
 
         <!-- display session by movie id -->
-         <div id="session" class="form-group col-sm ml-5 mt-4 pl-3">
-            <label>Select Session</label> <br>
-                <select name="select_session" class="form-select" aria-label="Default select example">
-                     <option value="" selected>Select the Session</option>
-                </select>
-         </div>
+         <table class="table session-table">
+            <thead>
+                <tbody id="sessionTable"></tbody>
+            </thead>
+         </table>
     </div>
     </div>
 </body>
@@ -52,13 +51,13 @@ $movie = $movieController -> display();
 <script>
     function showSession(str){
         if(str == ""){
-            document.getElementById("session").innerHtml = "";
+            document.getElementById("sessionTable").innerHTML = "";
             return;
         }else{
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
-                    document.getElementById("session").innerHtml = this.responseText;
+                    document.getElementById("sessionTable").innerHTML = this.responseText;
                 }
             }
             xhr.open("GET","get_session.php?q="+str,true);

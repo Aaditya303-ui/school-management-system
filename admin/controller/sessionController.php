@@ -26,6 +26,12 @@ class sessionController{
         return $session -> displaySessionById($movie_id);
     }
 
+    public function displayByHId($id)
+    {
+        $session = new Session();
+        return $session -> displayhallIdBySession($id);
+    }
+
     public function displayByMovieId($movie_id)
     {
         $session = new Session();

@@ -30,6 +30,15 @@ class Session{
         return $stmt -> fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function displayhallIdBySession($id)
+    {
+        $sql = "SELECT hall_id FROM session WHERE id = :id";
+        $stmt = $this -> conn -> prepare($sql);
+        $data = [":id" => $id];
+        $stmt -> execute($data);
+        return $stmt -> fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function displaySessionById($movie_id)
     {
         $sql = "SELECT * FROM session WHERE id = :id";

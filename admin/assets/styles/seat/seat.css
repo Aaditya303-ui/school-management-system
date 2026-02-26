@@ -1,0 +1,63 @@
+.theater-container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* The "Screen" at the top */
+.screen {
+    width: 70%;
+    height: 10px;
+    background: #ccc;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-radius: 50%;
+}
+
+/* Individual Seat Styling */
+.seat-item {
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+}
+
+/* Hide the actual checkbox but keep it functional */
+.seat-item input[type="checkbox"] {
+    display: none;
+}
+
+/* The label we use to look like a seat */
+.seat-label {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 35px;
+    transition: 0.3s;
+}
+
+/* Category Colors */
+.standard { background-color: #f1f1f1; color: #333; }
+.vip { background-color: #fff3cd; border-color: #ffc107; color: #856404; }
+.disabled-access { background-color: #e2d9f3; border-color: #6f42c1; color: #6f42c1; }
+
+/* When a seat is checked (Selected) */
+.seat-item input[type="checkbox"]:checked + .seat-label {
+    background-color: red !important;
+    color: white;
+    border-color: red;
+    transform: scale(1.1);
+}
+
+/* Section Dividers */
+.section-title {
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
